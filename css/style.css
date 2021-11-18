@@ -1,0 +1,280 @@
+* {
+	box-sizing: border-box;
+	word-wrap: break-word;
+	color: inherit;
+}
+html, body {
+  margin: 0px;
+  height: 100%;
+}
+body {
+	width: 100%;
+	min-width: 320px;
+	color: #555;
+}
+#__nuxt {
+  margin: 0px;
+}
+#__layout {
+  margin: 0px;
+}
+.statcounter {
+	position: fixed;
+}
+.read-more {
+  padding: 4px 8px;
+  font-size: 14px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.read-more:hover {
+  color: black;
+  border-color: black;
+}
+.container-main {
+	margin: 0px auto;
+	width: 100%;
+}
+.article-title {
+	font-size: 34px;
+}
+a, a:visited {
+	color: inherit;
+}
+.align-left {
+	text-align: left;
+}
+.align-right {
+	text-align: right;
+}
+.font-arial {
+  font-family: Arial;
+}
+.blog-link {
+  text-decoration: none;
+	font-weight: bold;
+}
+.blog-link:hover {
+  color: gray;
+}
+.blog-date, .blog-tags {
+	font-family: "Arial";
+	color: gray;
+	font-size: 14px;
+}
+.blog-lang {
+	padding: 0px 5px;
+  font-size: 14px;
+  text-align: center;
+  color: gray;
+  text-decoration: none;
+  border: 1px solid silver;
+  border-radius: 4px;
+  display: inline-block;
+}
+.blog-lang a {
+	text-decoration: none;
+	display: inline-block;
+}
+.blog-lang:hover {
+	color: black;
+	border-color: black;
+}
+.blog-cat, .blog-tag {
+  margin: 1px;
+  padding: 0px 8px 1px 8px;
+  font-size: 14px;
+  font-family: 'Noto Sans SC', sans-serif;;
+  line-height: 20px;
+  border-radius: 999px;
+  display: inline-block;
+}
+.blog-cat {
+	color: #4c4c4c;
+	border: 1px solid #4c4c4c;
+}
+.blog-tag {
+	color: white;
+	background: gray;
+}
+.blog-cat:hover {
+	color: white;
+}
+.blog-cat:hover, .blog-tag:hover {
+	background: black;
+}
+.blog-cat i, .blog-tag i {
+	color: inherit;
+}
+.blog-cat a, .blog-tag a{
+	text-decoration: none;
+	color: inherit;
+	display: inline-block;
+}
+.font-10 {
+  font-size: 10px;
+}
+.font-14 {
+  font-size: 14px;
+}
+.font-16 {
+  font-size: 16px;
+}
+.font-18 {
+  font-size: 18px;
+}
+.font-20 {
+  font-size: 20px;
+}
+.font-24 {
+  font-size: 24px;
+}
+.font-bold {
+  font-weight: bold;
+}
+.font-norm {
+  font-weight: normal;
+}
+.align-center {
+  text-align: center;
+}
+.m-top-0 {
+	margin-top: 0px;
+}
+/* toTop button start */
+/* https://www.liaoxuefeng.com/article/895922498171008 */
+.go-top {
+  opacity: 0.6;
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  border: 1px solid gray;
+  width: 38px;
+  height: 38px;
+  background-color: rgba(249, 249, 249, 1);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: opacity .3s;
+}
+.go-top:hover {
+    opacity: 1;
+}
+.go-top .arrow {
+  position: absolute;
+  left: 10px;
+  top: -1px;
+  width: 0;
+  height: 0;
+  border: 9px solid transparent;
+  border-bottom-color: gray;
+}
+.go-top .stick {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  width: 8px;
+  height: 14px;
+  display: block;
+  background-color: gray;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+}
+/* toTop button end */
+.go-top-hidden {
+	opacity: 0;
+	display: none;
+}
+footer {
+	padding: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.6);
+}
+footer p {
+	margin: 0 auto;
+	font-size: 14px;
+	text-align: center;
+}
+.hidden {
+	display: none;
+}
+
+@media all and (max-width: 1080px) {
+	nav {
+		width: 100%;
+	}
+	main {
+		width: auto;
+	}
+	.main-content {
+		min-height: calc(100vh - 112px);
+		padding: 10px;
+	}
+	.main-content, .main-content-unit {
+		margin: 0px;
+		width: auto;
+	}
+}
+
+@media all and (max-width: 600px) {
+	.container {
+		padding-top: 40px;
+	}
+	.main-content {
+		min-height: calc(100vh - 112px);
+	}
+}
+
+.google-auto-placed.ap_container iframe {
+  margin: 0px;
+}
+.isShow {
+	display: block;
+}
+
+.blog-wrap {
+  margin: 0px auto 10px auto;
+  padding-bottom: 10px;
+  width: 1080px;
+  min-height: calc(100vh - 169px);
+}
+.blog-main {
+  margin: 0px auto;
+  width: 65%;
+  padding: 0px 32px 32px 32px;
+  background: white;
+  overflow: hidden;
+}
+
+@media all and (max-width: 1080px) {
+  .blog-wrap {
+    width: 100%;
+    justify-content: space-around;
+  }
+  .blog-main {
+    margin: 0px auto 16px auto;
+    width: 65%;
+  }
+}
+@media all and (max-width: 768px) {
+  .blog-wrap {
+    padding: 0px;
+    min-height: calc(100vh - 149px);
+    background: white;
+    display: block;
+  }
+  .blog-main {
+    margin: 0px;
+    padding: 10px;
+    width: auto;
+    border: none;
+    border-radius: 0px;
+  }
+  .blog-side {
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+.no-decor-link {
+  text-decoration: none;
+}
