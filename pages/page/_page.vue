@@ -56,7 +56,7 @@ export default {
         { 
           hid: 'description',
           name: 'description',
-          content: "Moonhea的微博"
+          content: "Jenny的自建微博，纯静态网站，托管在GitHub。"
         }
       ]
     }

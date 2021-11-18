@@ -13,7 +13,7 @@ export default {
     return {
       title: "404",
       meta: [
-        { hid: 'description', name: 'description', content: "Moonhea的微博" }
+        { hid: 'description', name: 'description', content: "Jenny的自建微博，纯静态网站，托管在GitHub。" }
       ]
     }
   }

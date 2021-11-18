@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <p>- Moonhea的自建微博 -</p>
+    <p>- Jenny的自建微博 -</p>
     <div class="go-top" @click="toTop" :class="{'go-top-hidden': isHidden}">
         <div class="arrow"></div>
         <div class="stick"></div>
