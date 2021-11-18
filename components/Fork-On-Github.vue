@@ -1,6 +1,6 @@
 <template>
   <span id="forkongithub">
-    <a href="https://github.com/c53hzn/desk-weibo">Fork me on GitHub</a>
+    <a target="_blank" href="https://github.com/c53hzn/desk-weibo">Fork me on GitHub</a>
   </span>
 </template>
 
