@@ -2,7 +2,7 @@
   <div class="desk-banner">
     <div class="upper">
       <span class="left"></span>
-      <span>&nbsp;&nbsp;Self-hosted Weibo OF&nbsp;&nbsp;</span>
+      <span>&nbsp;&nbsp;Self-hosted Weibo of&nbsp;&nbsp;</span>
       <span class="right"></span>
     </div>
     <div class="lower">

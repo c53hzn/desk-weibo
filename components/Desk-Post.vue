@@ -2,13 +2,13 @@
 	<div class="desk-unit">
     <div class="share">
       <div class="media blue">
-        <a target="_blank" :href="'https://www.facebook.com/sharer/sharer.php?u=https://moonhea.com'+url"><i class="fa fa-facebook-f"></i></a>
+        <a target="_blank" :href="'https://www.facebook.com/sharer/sharer.php?u=https://www.houzhenni.com/desk-weibo'+url"><i class="fa fa-facebook-f"></i></a>
       </div>
       <div class="media blue">
-        <a target="_blank" :href="'http://twitter.com/share?url=https://moonhea.com'+url"><i class="fa fa-twitter"></i></a>
+        <a target="_blank" :href="'http://twitter.com/share?url=https://www.houzhenni.com/desk-weibo'+url"><i class="fa fa-twitter"></i></a>
       </div>
       <div class="media red">
-        <a target="_blank" :href="'https://service.weibo.com/share/share.php?url=https://moonhea.com'+url"><i class="fa fa-weibo"></i></a>
+        <a target="_blank" :href="'https://service.weibo.com/share/share.php?url=https://www.houzhenni.com/desk-weibo'+url"><i class="fa fa-weibo"></i></a>
       </div>
     </div>
     <div class="desk-unit-main">
