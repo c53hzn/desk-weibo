@@ -1,18 +1,20 @@
+var myBase = "/desk-weibo";
+
 module.exports = {
   head: {
-    // eg: '%s | Moonhea的微博',
-    titleTemplate: '%s | Moonhea的微博',
+    // eg: '%s | Jenny的微博',
+    titleTemplate: '%s | Jenny的微博',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
     link: [
-      { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: '/css/font-Noto-Sans-SC.css' },
-      { rel: 'stylesheet', href: '/css/style.css?2021-11-16' },
-      { rel: 'stylesheet', href: '/font-awesome/css/font-awesome.min.css'},
+      { rel: 'shortcut icon', type: 'image/x-icon', href: myBase+'/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: myBase+'/favicon.ico' },
+      { rel: 'stylesheet', href: myBase+'/css/font-Noto-Sans-SC.css' },
+      { rel: 'stylesheet', href: myBase+'/css/style.css?2021-11-18' },
+      { rel: 'stylesheet', href: myBase+'/font-awesome/css/font-awesome.min.css'},
     ],
   },
   //if you will deploy in <username>.github.io/<my-project>
