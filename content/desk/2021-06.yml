@@ -1,0 +1,10 @@
+posts:
+  - id: desk-2021-06-post001
+    time: '2021-06-05 15:58'
+    content: 
+      - 刚刚发现特朗普把自己的博客“办公桌”给关闭了，那我这个岂不是很尴尬。。。
+    link:
+      - href: https://www.donaldjtrump.com/desk
+        text: 特朗普的办公桌
+
+
