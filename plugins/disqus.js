@@ -10,7 +10,7 @@ function disqus(id) {
 
     (function() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');
-    s.src = 'https://moonhea.disqus.com/embed.js';
+    s.src = 'https://houzhenni-com.disqus.com/embed.js';
     s.setAttribute('data-timestamp', +new Date());
     (d.head || d.body).appendChild(s);
     })();
