@@ -12,7 +12,6 @@
         :link="post.link"
         :picture="post.picture"
         :isDetail="true"
-        :share_content="share_txt"
         ></DeskPost>
         <div id="disqus_thread">
           <!-- <div class="loadCommentBtn read-more" @click="loadDisqus">
