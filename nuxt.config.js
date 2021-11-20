@@ -16,6 +16,14 @@ module.exports = {
       { rel: 'stylesheet', href: myBase+'/css/style.css?2021-11-18' },
       { rel: 'stylesheet', href: myBase+'/font-awesome/css/font-awesome.min.css'},
     ],
+    script: [
+      { src: '/js/statcounter.js?2021-11-20'},
+      {
+        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
+        'data-ad-client': 'ca-pub-2790001673900763',
+        'async':true
+      }
+    ]
   },
   //if you will deploy in <username>.github.io/<my-project>
   //then base should be set to "/<my-project>/"

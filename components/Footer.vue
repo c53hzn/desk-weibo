@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <p>- Jenny的自建微博 -</p>
+    <p>- Jenny的自建微博 | <a href="https://www.houzhenni.com">回主站</a> -</p>
     <div class="go-top" @click="toTop" :class="{'go-top-hidden': isHidden}">
         <div class="arrow"></div>
         <div class="stick"></div>
