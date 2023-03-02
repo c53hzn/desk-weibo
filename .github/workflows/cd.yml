@@ -33,5 +33,5 @@ jobs:
         with:
           source-directory: 'dist'
           destination-github-username: 'c53hzn'
-          destination-repository-name: 'c53hzn.github.io/desk-weibo'
+          destination-repository-name: 'desk-weibo'
           user-email: hzn2017@outlook.com
