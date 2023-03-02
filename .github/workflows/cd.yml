@@ -1,23 +1,37 @@
-name: Build and Deploy
-on: [push]
+name: cd
+
+on: [push, pull_request]
+
 jobs:
-  build-and-deploy:
+  cd:
     runs-on: ${{ matrix.os }}
+
     strategy:
       matrix:
         os: [ubuntu-latest]
         node: [14]
+
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@master
 
-      - name: Install and Generate 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
-        run: |
-          npm install
-          npm run generate
-
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.5
+      - name: Setup node env
+        uses: actions/setup-node@v2.1.2
         with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: dist # The folder the action should deploy.
+          node-version: ${{ matrix.node }}
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate
+        run: npm run generate
+
+      - name: Push directory to another repository
+        uses: cpina/github-action-push-to-another-repository@v1.3
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: 'dist'
+          destination-github-username: 'c53hzn'
+          destination-repository-name: 'c53hzn.github.io/desk-weibo'
+          user-email: hzn2017@outlook.com
