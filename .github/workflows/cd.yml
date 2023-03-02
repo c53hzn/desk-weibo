@@ -36,3 +36,4 @@ jobs:
           destination-repository-name: 'desk-weibo'
           user-email: hzn2017@outlook.com
           target-branch: gh-pages
+
