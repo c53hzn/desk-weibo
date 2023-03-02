@@ -91,36 +91,89 @@ function zoompic(arr) {
 	var d = document;
 	var maskStyle = d.createElement("style");
 	var maskDom = d.createElement("div");
+	var imgObj = {};
 	maskDom.id = "mask_layer";
 	maskDom.className = "hidden";
-	maskDom.innerHTML = `<div id="mask_child"></div>`;
+	maskDom.innerHTML = `<div id="mask_child"></div><div class="arrow arrow-left">&lt;</div><div class="arrow arrow-right">&gt;</div>`;
 	maskStyle.innerHTML = styleContent;
 	d.querySelector("head").appendChild(maskStyle);
 	d.querySelector("body").appendChild(maskDom);
-	d.querySelector("#mask_child").onclick = function() {
+	d.querySelector("#mask_child").onclick = function () {
 		d.querySelector("#mask_layer").className = "fade-out-anime";
-	}
+	};
 	for (let j = 0; j < arr.length; j++) {
-		zoom(arr[j][0],arr[j][1],j);
+		zoom(arr[j][0], arr[j][1], j);
 	}
-	function zoom(selector,isImg,groupIndex) {
+	function zoom(selector, isImg, groupIndex) {
 		var nodes = d.querySelectorAll(selector);
+		if (nodes.length < 2) {
+			d.querySelector(".arrow.arrow-left").style.display = "none";
+			d.querySelector(".arrow.arrow-right").style.display = "none";
+		}
 		for (let i = 0; i < nodes.length; i++) {
 			let parent = nodes[i].parentNode;
 			let grandParent = parent.parentNode;
 			if (parent.nodeName != "A" && grandParent.nodeName != "A") {
 				nodes[i].className = nodes[i].className + " zoomable";
-				nodes[i].setAttribute("data-zoom-group-index",groupIndex+"-"+i);
-				nodes[i].onclick = function() {
+				nodes[i].setAttribute("data-zoom-group-index", groupIndex + "-" + i);
+				if (isImg) {
+					imgObj[groupIndex + "-" + i] = nodes[i].src;
+				} else {
+					imgObj[groupIndex + "-" + i] = nodes[i].style.backgroundImage;
+				}
+				nodes[i].onclick = function () {
+					d.querySelector(".arrow.arrow-left").setAttribute(
+						"data-zoom-group-index",
+						this.getAttribute("data-zoom-group-index")
+					);
+					d.querySelector(".arrow.arrow-right").setAttribute(
+						"data-zoom-group-index",
+						this.getAttribute("data-zoom-group-index")
+					);
 					if (isImg) {
-						d.querySelector("#mask_child").style.backgroundImage = "url("+this.src+")";
+						d.querySelector("#mask_child").style.backgroundImage =
+							"url(" + this.src + ")";
 					} else {
-						d.querySelector("#mask_child").style.backgroundImage = this.style.backgroundImage;
+						d.querySelector(
+							"#mask_child"
+						).style.backgroundImage = this.style.backgroundImage;
 					}
 					d.querySelector("#mask_layer").className = "fade-in-anime";
-				}
+				};
 			}
 		}
 	}
+	d.querySelector(".arrow.arrow-left").onclick = function () {
+		var indexStr = this.getAttribute("data-zoom-group-index");
+		var indexArr = indexStr.split("-");
+		if (imgObj[indexArr[0] + "-" + (indexArr[1] - 1)]) {
+			d.querySelector("#mask_child").style.backgroundImage =
+				"url(" + imgObj[indexArr[0] + "-" + (indexArr[1] - 1)] + ")";
+			d.querySelector(".arrow.arrow-left").setAttribute(
+				"data-zoom-group-index",
+				indexArr[0] + "-" + (indexArr[1] - 1)
+			);
+			d.querySelector(".arrow.arrow-right").setAttribute(
+				"data-zoom-group-index",
+				indexArr[0] + "-" + (indexArr[1] - 1)
+			);
+		}
+	};
+	d.querySelector(".arrow.arrow-right").onclick = function () {
+		var indexStr = this.getAttribute("data-zoom-group-index");
+		var indexArr = indexStr.split("-");
+		if (imgObj[indexArr[0] + "-" + (Number(indexArr[1]) + 1)]) {
+			d.querySelector("#mask_child").style.backgroundImage =
+				"url(" + imgObj[indexArr[0] + "-" + (Number(indexArr[1]) + 1)] + ")";
+			d.querySelector(".arrow.arrow-left").setAttribute(
+				"data-zoom-group-index",
+				indexArr[0] + "-" + (Number(indexArr[1]) + 1)
+			);
+			d.querySelector(".arrow.arrow-right").setAttribute(
+				"data-zoom-group-index",
+				indexArr[0] + "-" + (Number(indexArr[1]) + 1)
+			);
+		}
+	};
 }
 module.exports = zoompic;
