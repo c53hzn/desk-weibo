@@ -41,7 +41,7 @@ jobs:
         with:
           # Token for the repo
           # Can be passed in using $\{{ secrets.GITHUB_TOKEN }}
-          github_token: ${{ secrets.GITHUB_TOKEN2 }}
+          github_token: ${{ secrets.API_TOKEN_GITHUB2 }}
           # Destination branch to push changes
           branch: gh-pages
           # Use force push to fully overwrite the destination branch
