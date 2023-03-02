@@ -43,7 +43,7 @@ export default {
     var that = this;
     that.$nextTick(() => {
       //add zoompic for imgs
-      zoompic([[".blog-main img",true]]);
+      zoompic([[".desk-unit", true, true, "img"]]);
     });
   },
   head() {
