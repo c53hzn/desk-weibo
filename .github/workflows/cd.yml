@@ -26,14 +26,27 @@ jobs:
       - name: Generate
         run: npm run generate
 
-      - name: Push directory to another repository
-        uses: cpina/github-action-push-to-another-repository@v1.3
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB2 }}
+#       - name: Push directory to another repository
+#         uses: cpina/github-action-push-to-another-repository@v1.3
+#         env:
+#           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB2 }}
+#         with:
+#           source-directory: 'dist'
+#           destination-github-username: 'c53hzn'
+#           destination-repository-name: 'desk-weibo'
+#           user-email: hzn2017@outlook.com
+#           target-branch: gh-pages
+      - name: Force push to destination branch
+        uses: ad-m/github-push-action@v0.5.0
         with:
-          source-directory: 'dist'
-          destination-github-username: 'c53hzn'
-          destination-repository-name: 'desk-weibo'
-          user-email: hzn2017@outlook.com
-          target-branch: gh-pages
+          # Token for the repo
+          # Can be passed in using $\{{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN2 }}
+          # Destination branch to push changes
+          branch: gh-pages
+          # Use force push to fully overwrite the destination branch
+          force: true
+          # We have to push from the folder where files were generated.
+          # Same were the new repo was initialized in the previous step
+          directory: ./dist
 
